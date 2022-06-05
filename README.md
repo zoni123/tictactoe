@@ -1,5 +1,5 @@
-# tictactoe
-trash rendition of tictactoe, might update it to make the code a little less abysmal
+# tictactoe/C++
+trash rendition of tictactoe in c++, might update it to make the code a little less abysmal
 
 At the very start, select your desired "team": X or O (note that that's an O not a 0 and that any input containing more than 1 character might result in weird behaviour)
 (also the input character has to be capitalised, as the code checks for a capital X/O)
