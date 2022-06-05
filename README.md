@@ -9,3 +9,8 @@ The game is meant for 2 players, taking turns and specifying, each time they wan
 If the move is invalid (e.g. (4 3), (5 8), (0 2) etc.) the game will simply shut itself down.
 
 The winner, as in any usual tic-tac-toe game, is decided when a line, column or diagonal contains only O's or X's .
+
+# -> .exe
+`cd` into the directory containing the .cpp
+
+`g++ -o {file_name}.exe main.cpp`
