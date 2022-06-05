@@ -10,7 +10,7 @@ If the move is invalid (e.g. (4 3), (5 8), (0 2) etc.) the game will simply shut
 
 The winner, as in any usual tic-tac-toe game, is decided when a line, column or diagonal contains only O's or X's .
 
-# -> .exe
+# -> .exe (assuming g++)
 `cd` into the directory containing the .cpp
 
 `g++ -o {file_name}.exe main.cpp`
