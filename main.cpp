@@ -2,8 +2,9 @@
 
 bool w=0;
 char a[5][5];
-int v1, v2;
-void afisare(char a[5][5])
+int8_t v1, v2, moves;
+
+void show(char a[5][5])
 {
     for(int i=0;i<5;i++)
     {
@@ -14,22 +15,24 @@ void afisare(char a[5][5])
     std::cout<<std::endl;
 }
 
-void joc(char c[3], char a[5][5]);
+void game(char c[3], char a[5][5]);
 
-void alegere(char c[3])
+void choice(char c[3])
 {
     std::cout<<"X or O? ";
     std::cin>>c[0];
-    joc(c, a);
+    game(c, a);
 }
 
-void joc(char c[3], char a[5][5])
+void game(char c[3], char a[5][5])
 {
     if(c[0]=='O')
     {
         while(w==0)
         {
+            std::cout<<"Type your desired line and column (1-3) - O"<<std::endl;
             std::cin>>c[1]>>c[2];
+            moves++;
             std::cout<<std::endl;
             v1=c[1]-'0';
             v2=c[2]-'0';
@@ -39,8 +42,12 @@ void joc(char c[3], char a[5][5])
                 break;
             }
             a[2*v1-2][2*v2-2]='O';
-            afisare(a);
-
+            show(a);
+            if(moves==9)
+            {
+                std::cout<<"TIE!";
+                return;
+            }
             if((a[0][0]=='O' && a[0][2]=='O' && a[0][4]=='O') || (a[2][0]=='O' && a[2][2]=='O' && a[2][4]=='O') || (a[4][0]=='O' && a[4][2]=='O' && a[4][4]=='O') || (a[0][0]=='O' && a[2][0]=='O' && a[4][0]=='O') || (a[0][2]=='O' && a[2][2]=='O' && a[4][2]=='O') || (a[0][4]=='O' && a[2][4]=='O' && a[4][4]=='O') || (a[0][0]=='O' && a[2][2]=='O' && a[4][4]=='O') || (a[0][4]=='O' && a[2][2]=='O' && a[4][0]=='O'))
             {
                 w=1;
@@ -53,7 +60,9 @@ void joc(char c[3], char a[5][5])
             }
             if(w==1)
                 break;
+            std::cout<<"Type your desired line and column (1-3) - X"<<std::endl;
             std::cin>>c[1]>>c[2];
+            moves++;
             std::cout<<std::endl;
             v1=c[1]-'0';
             v2=c[2]-'0';
@@ -63,8 +72,12 @@ void joc(char c[3], char a[5][5])
                 break;
             }
             a[2*v1-2][2*v2-2]='X';
-            afisare(a);
-
+            show(a);
+            if(moves==9)
+            {
+                std::cout<<"TIE!";
+                return;
+            }
             if((a[0][0]=='O' && a[0][2]=='O' && a[0][4]=='O') || (a[2][0]=='O' && a[2][2]=='O' && a[2][4]=='O') || (a[4][0]=='O' && a[4][2]=='O' && a[4][4]=='O') || (a[0][0]=='O' && a[2][0]=='O' && a[4][0]=='O') || (a[0][2]=='O' && a[2][2]=='O' && a[4][2]=='O') || (a[0][4]=='O' && a[2][4]=='O' && a[4][4]=='O') || (a[0][0]=='O' && a[2][2]=='O' && a[4][4]=='O') || (a[0][4]=='O' && a[2][2]=='O' && a[4][0]=='O'))
             {
                 w=1;
@@ -81,7 +94,9 @@ void joc(char c[3], char a[5][5])
     {
         while(w==0)
         {
+            std::cout<<"Type your desired line and column (1-3) - X"<<std::endl;
             std::cin>>c[1]>>c[2];
+            moves++;
             std::cout<<std::endl;
             v1=c[1]-'0';
             v2=c[2]-'0';
@@ -91,8 +106,12 @@ void joc(char c[3], char a[5][5])
                 break;
             }
             a[2*v1-2][2*v2-2]='X';
-            afisare(a);
-
+            show(a);
+            if(moves==9)
+            {
+                std::cout<<"TIE!";
+                return;
+            }
             if((a[0][0]=='O' && a[0][2]=='O' && a[0][4]=='O') || (a[2][0]=='O' && a[2][2]=='O' && a[2][4]=='O') || (a[4][0]=='O' && a[4][2]=='O' && a[4][4]=='O') || (a[0][0]=='O' && a[2][0]=='O' && a[4][0]=='O') || (a[0][2]=='O' && a[2][2]=='O' && a[4][2]=='O') || (a[0][4]=='O' && a[2][4]=='O' && a[4][4]=='O') || (a[0][0]=='O' && a[2][2]=='O' && a[4][4]=='O') || (a[0][4]=='O' && a[2][2]=='O' && a[4][0]=='O'))
             {
                 w=1;
@@ -105,7 +124,9 @@ void joc(char c[3], char a[5][5])
             }
             if(w==1)
                 break;
+            std::cout<<"Type your desired line and column (1-3) - O"<<std::endl;
             std::cin>>c[1]>>c[2];
+            moves++;
             std::cout<<std::endl;
             v1=c[1]-'0';
             v2=c[2]-'0';
@@ -115,8 +136,12 @@ void joc(char c[3], char a[5][5])
                 break;
             }
             a[2*v1-2][2*v2-2]='O';
-            afisare(a);
-
+            show(a);
+            if(moves==9)
+            {
+                std::cout<<"TIE!";
+                return;
+            }
             if((a[0][0]=='O' && a[0][2]=='O' && a[0][4]=='O') || (a[2][0]=='O' && a[2][2]=='O' && a[2][4]=='O') || (a[4][0]=='O' && a[4][2]=='O' && a[4][4]=='O') || (a[0][0]=='O' && a[2][0]=='O' && a[4][0]=='O') || (a[0][2]=='O' && a[2][2]=='O' && a[4][2]=='O') || (a[0][4]=='O' && a[2][4]=='O' && a[4][4]=='O') || (a[0][0]=='O' && a[2][2]=='O' && a[4][4]=='O') || (a[0][4]=='O' && a[2][2]=='O' && a[4][0]=='O'))
             {
                 w=1;
@@ -132,9 +157,8 @@ void joc(char c[3], char a[5][5])
     else
     {
         std::cout<<"retry"<<'\n';
-        alegere(c);
+        choice(c);
     }
-
 }
 
 int main()
@@ -144,6 +168,6 @@ int main()
         for(int j=0;j<5;j++)
             if(i==1 || i==3 || j==1 || j==3)
                 a[i][j]='#';
-    alegere(c);
+    choice(c);
     return 0;
 }
